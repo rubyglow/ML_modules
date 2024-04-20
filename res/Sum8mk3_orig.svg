@@ -7,7 +7,7 @@
    viewBox="0 0 19.84375 100.54167"
    version="1.1"
    id="svg8"
-   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
    sodipodi:docname="Sum8mk3_orig.svg"
    inkscape:export-filename="E:\Users\Martin\Documents\Rack_Source\rack\plugins\ML_modules\res\TrigBuf.png"
    inkscape:export-xdpi="96"
@@ -133,9 +133,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.828427"
-     inkscape:cx="34.648234"
-     inkscape:cy="131.87542"
+     inkscape:zoom="5.656854"
+     inkscape:cx="50.204584"
+     inkscape:cy="95.636196"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -157,7 +157,9 @@
      inkscape:pagecheckerboard="true"
      inkscape:snap-page="true"
      inkscape:snap-text-baseline="true"
-     showborder="true">
+     showborder="true"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1">
     <inkscape:grid
        type="xygrid"
        id="grid43"
@@ -166,7 +168,9 @@
        spacingx="0.52916668"
        spacingy="0.52916668"
        dotted="false"
-       empspacing="20" />
+       empspacing="20"
+       units="px"
+       visible="true" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -324,6 +328,17 @@
          id="tspan34"
          x="3.6267123"
          y="212.86272">Ins</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="10.654989"
+       y="212.76602"
+       id="text4847-2"><tspan
+         sodipodi:role="line"
+         id="tspan34-5"
+         x="10.654989"
+         y="212.76602"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:Alef;-inkscape-font-specification:'Alef, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000">- 0 +</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
