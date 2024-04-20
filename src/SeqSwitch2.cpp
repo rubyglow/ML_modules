@@ -129,7 +129,6 @@ struct SeqSwitch2 : Module {
 		if(inputRangeJ) inputRange = (InputRange) json_integer_value(inputRangeJ);
 	};
 
-	inline int rand_range(int min, int max) {float rnd=rand()/(RAND_MAX-1.0); return min + roundf(rnd*(max-min)); }
 
 };
 

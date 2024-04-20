@@ -6,6 +6,9 @@
 #define MAX(a,b) a>b?a:b
 #define MIN(a,b) a>b?b:a
 
+inline int rand_range(int min, int max) {float rnd=rack::random::uniform(); return min + floor(rnd*(1+max-min)); }
+
+
 using namespace rack;
 
 extern Plugin *pluginInstance;
