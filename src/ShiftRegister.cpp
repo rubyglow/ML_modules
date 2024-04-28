@@ -1,4 +1,6 @@
 #include "ML_modules.hpp"
+#include "SettingsHandler.hpp"
+
 
 #define MAX(a,b) a>b?a:b
 
@@ -24,10 +26,11 @@ struct ShiftRegister : Module {
         // OUT_OUTPUT,
         NUM_OUTPUTS
     };
-        enum LightIds {
-                STEP1_LIGHT,
-                NUM_LIGHTS = STEP1_LIGHT+16
-        };
+
+    enum LightIds {
+        STEP1_LIGHT,
+        NUM_LIGHTS = STEP1_LIGHT+16
+    };
 
 
     ShiftRegister() {
@@ -40,15 +43,44 @@ struct ShiftRegister : Module {
             configLight(STEP1_LIGHT+i, "Step "+std::to_string(i+1) + " (Channel 0)");
         }
 
-        onReset(); 
+        onReset();
     };
 
+    json_t *dataToJson() override {
 
+        json_t *rootJ = json_object();
+
+        json_object_set_new(rootJ, "resetOnStart", json_integer(resetOnStart));
+
+        json_t *valuesJ = json_array();
+        for (int i = 0; i < 8*PORT_MAX_CHANNELS; i++) {
+            json_t *stepJ = json_real( (float) values[i]);
+            json_array_append_new(valuesJ, stepJ);
+        }
+        json_object_set_new(rootJ, "values", valuesJ);
+
+        return rootJ;
+    }
+
+    void dataFromJson(json_t *rootJ) override {
+
+
+        json_t *resetJ = json_object_get(rootJ, "resetOnStart");
+        if(resetJ) resetOnStart =  json_integer_value(resetJ);
+
+        json_t *valuesJ = json_object_get(rootJ, "values");
+        if(!resetOnStart && valuesJ) {
+            for (int i = 0; i < 8*PORT_MAX_CHANNELS; i++) {
+                json_t *stepJ = json_array_get(valuesJ, i);
+                values[i] = json_number_value(stepJ);
+            }
+        }
+    }
 
     void process(const ProcessArgs &args) override;
 
     int position=0;
-    bool resetOnStart = false;
+    bool resetOnStart = true;
 
 
     float values[8 * PORT_MAX_CHANNELS] = {};
@@ -58,6 +90,7 @@ struct ShiftRegister : Module {
 
     void onReset() override {
         position=0;
+        Module::onReset();
         memset(channels, 0, 8*sizeof(int));
         memset(values,   0, 8*PORT_MAX_CHANNELS*sizeof(float));
         for(int i=0; i<8; i++) {
